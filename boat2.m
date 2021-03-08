@@ -25,7 +25,7 @@ zPoints = linspace(0,H,Npts); % set of points in the z direction (vertical)
 
 [X, Z] = meshgrid(xPoints, zPoints); % create the meshgrid
 P = [X(:)'; Z(:)']; % pack the points into a matrix
-insideBoat = transpose(P(2,:) >= W/3 & P(1,:) <= H); % find all the points inside the boat - a logical array
+insideBoat = transpose(P(1,:) <= W/2 & P(1,:) >= -W/2); % find all the points inside the boat - a logical array
 
 dx = xPoints(2)-xPoints(1); % delta x
 dz = zPoints(2)-zPoints(1); % delta z
